@@ -1,0 +1,90 @@
+<router-outlet></router-outlet>
+<div class="container" *ngIf="!condition">
+<!-- <ng-container> -->
+<button (click)="clicked()">click function</button>
+<button (keydown)="clicked()">Key down function</button> 
+<div>
+<input type="text" [(ngModel)]="databind" placeholder="enter the text only" >
+</div>
+<h1>ngModel [(ngModel)]</h1> Pipes uppercase
+<hr>
+{{databind |uppercase}} 
+<hr>
+{{titlecase | titlecase}}
+
+<h6>decimel pipes 3.9 </h6>
+{{3.9 | number: '1.0-0'}}
+<h6>decimel pipes 199.6</h6>
+{{10199.6 | number: '1.0-0'}}
+<hr>
+{{titlecase | truncate}}truncate
+<hr>
+<div class="row">
+   <div class="col-md-4">
+    <h2 *ngIf="displayname "> <div>{{clickMessage}}</div></h2>
+   </div>
+   <div class="col-md-4">
+     <h4 *ngIf="displaynameblocked">this is name abi blocked ..</h4>{{clickMessage}} </div>
+</div>
+
+<section>
+  
+  <div class="example-button-row">
+    <button mat-button (click)="onclick()">Basic</button>
+    <button mat-button color="primary" (click)="onclick1()">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button  color="warn">Warn</button>
+    <button mat-button disabled ="condition ? false">Disabled</button>
+    <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+
+<div class="row">
+  <div class="col-md-4">
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Small</mat-card-subtitle>
+        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      </mat-card-title-group>
+      <mat-card-content>
+        <!-- {{database.name}} -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-md-4">
+    <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Medium</mat-card-subtitle>
+      <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+    <mat-card-content>
+      <!-- {{fields.field}} -->
+    </mat-card-content>
+  </mat-card>
+</div>
+
+  <div class="col-md-4">
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Large</mat-card-subtitle>
+    <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+  </mat-card-title-group>
+  <mat-card-content *ngIf="false">
+    {{longText}}
+  </mat-card-content>
+  <mat-card-content *ngIf="true">
+    {{longText}}
+  </mat-card-content>
+</mat-card>
+  </div>
+</div>
+  
+<!-- </ng-container> -->
+
+</div>
+<div *ngFor="let color of colurs; index as i;">
+  <h2>{{i+1}}{{color}}</h2>
+</div>
